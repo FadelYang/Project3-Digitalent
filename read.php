@@ -41,9 +41,9 @@
         <div class="col-2 justify-content-end">
             <a href="./index.php"><h4>Tambah Barang</h4></a>
         </div>
-        <div class="col-2 justify-content-end">
+        <!-- <div class="col-2 justify-content-end">
             <a href="./read.php"><h4>Daftar Barang</h4></a>
-        </div>
+        </div> -->
     </nav>
 
     </div>

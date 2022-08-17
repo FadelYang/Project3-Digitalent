@@ -26,9 +26,9 @@
         <div class="col">
             <h1>Manajemen Barang</h1>
         </div>
-        <div class="col-1 justify-content-end">
+        <!-- <div class="col-1 justify-content-end">
             <h4>Home</h4>
-        </div>
+        </div> -->
         <div class="col-2 justify-content-end">
             <a href="./read.php"><h4>Daftar Barang</h4></a>
         </div>
