@@ -10,7 +10,7 @@
     <title>Document</title>
 </head>
 <body class="container">
-
+        <?php include 'edit.php' ?>
         <?php if (isset($_SESSION['message'])): ?>
             <div class="alert alert-<?=$_SESSION["msg_type"]?>">
 
@@ -40,21 +40,26 @@
             <form action="create.php" method="POST">
                 <div class="mb-3">
                     <label for="no" class="form-label">No</label>
-                    <input type="number" value="auto" name="no" id="no" class="form-control">
+                    <input type="number" value="<?php echo $no ?>" name="no" id="no" class="form-control">
                 </div>
                 <div class="mb-3">
                     <label class="form-label" for="name">Nama Merek</label>
-                    <input type="text" name="name" id="for" class="form-control" require>
+                    <input type="text" name="name" id="for" value="<?php echo $name ?>" class="form-control" required>
                 </div>
                 <div class="mb-3">
                     <div class="form-label" for="warna">Warna</div>
-                    <input type="text" name="warna" id="warna" class="form-control" require>
+                    <input type="text" name="warna" id="warna" class="form-control" value="<?php echo $warna ?>" required>
                 </div>
                 <div class="mb-3">
                     <label for="jumlah" class="form-label">Jumlah</label>
-                    <input class="form-control" name="jumlah" id="jumlah" type="number" require>
+                    <input class="form-control" name="jumlah" id="jumlah" type="number"value="<?php echo $jumlah ?>" required>
                 </div>
-                <button type="submit" name="tambah" class="btn btn-primary">Tambah</button>
+                <?php if ($update == true): ?>
+                    <button type="submit" name="perbarui" class="btn btn-info">update</button>
+
+                <?php else: ?>
+                    <button type="submit" name="tambah" class="btn btn-primary">Tambah</button>
+                <?php endif ?>
             </form>
     </main>
 

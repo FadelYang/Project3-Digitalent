@@ -10,6 +10,7 @@
 </head>
 <body>
     <?php include 'koneksi.php' ?>
+    <?php include 'edit.php' ?>
     <?php
         function pre_r( $array ) {
             echo '<pre>';

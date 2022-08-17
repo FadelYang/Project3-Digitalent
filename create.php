@@ -35,13 +35,13 @@
                 $_SESSION['message'] = "Data berhasil ditambahkan";
                 $_SESSION['msg_type'] = "success";
         
-                header("location: index.php");
+                header("location: read.php");
         }
 
             $_SESSION['message'] = "Data berhasil ditambahkan";
             $_SESSION['msg_type'] = "success";
 
-            header("location: index.php");
+            header("location: read.php");
 
 
         // header("location: read.php");
