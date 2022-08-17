@@ -10,6 +10,18 @@
     <title>Document</title>
 </head>
 <body class="container">
+
+        <?php if (isset($_SESSION['message'])): ?>
+            <div class="alert alert-<?=$_SESSION["msg_type"]?>">
+
+                <?php  
+                    echo $_SESSION["message"];
+                    unset($_SESSION["message"]);
+                ?>
+
+            </div>
+        <?php endif ?>
+
     <nav class="row align-items-center">
         <div class="col">
             <h1>Manajemen Barang</h1>
@@ -18,7 +30,7 @@
             <h4>Home</h4>
         </div>
         <div class="col-2 justify-content-end">
-            <h4>Daftar Barang</h4>
+            <a href="./read.php"><h4>Daftar Barang</h4></a>
         </div>
     </nav>
 
@@ -47,7 +59,7 @@
     </main>
 
     <?php
-        include 'koneksi.php';
+        require_once 'koneksi.php';
     ?>
 </body>
 </html>

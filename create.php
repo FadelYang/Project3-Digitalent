@@ -8,27 +8,48 @@
     <title>Data Barangs</title>
 </head>
 <body>
-<?php
-include 'koneksi.php';
-if(isset($_POST['tambah'])) {
+    <?php
+    include 'koneksi.php';
 
-    $no = $_POST['no'];
-    $name = $_POST['name'];
-    $warna = $_POST['warna'];
-    $jumlah = $_POST['jumlah'];        // $mysqli_query("INSERT INTO tbbarang  VALUES ('$no', '$name', '$warna', '$jumlah')");
+    session_start();
 
-    if ($no != null) {
-        $mysqli->query("INSERT INTO tbbarang  VALUES ($no, '$name', '$warna', $jumlah)") or 
-            die($mysqli->error);    
-    } else {
-        $mysqli->query(("INSERT INTO tbbarang (nama_merek, warna, jumlah) VALUES ('$name', '$warna', $jumlah)")) or
-            die($mysqli->error);
+    if(isset($_POST['tambah'])) {
+
+        $no = $_POST['no'];
+        $name = $_POST['name'];
+        $warna = $_POST['warna'];
+        $jumlah = $_POST['jumlah'];        // $mysqli_query("INSERT INTO tbbarang  VALUES ('$no', '$name', '$warna', '$jumlah')");
+
+        if ($no != null) {
+            $mysqli->query("INSERT INTO tbbarang  VALUES ($no, '$name', '$warna', $jumlah)") or 
+                die($mysqli->error);   
+                
+                $_SESSION['message'] = "Data berhasil ditambahkan";
+                $_SESSION['msg_type'] = "success";
+        
+                header("location: index.php");
+        } else {
+            $mysqli->query(("INSERT INTO tbbarang (nama_merek, warna, jumlah) VALUES ('$name', '$warna', $jumlah)")) or
+                die($mysqli->error);
+
+                $_SESSION['message'] = "Data berhasil ditambahkan";
+                $_SESSION['msg_type'] = "success";
+        
+                header("location: index.php");
+        }
+
+            $_SESSION['message'] = "Data berhasil ditambahkan";
+            $_SESSION['msg_type'] = "success";
+
+            header("location: index.php");
+
+
+        // header("location: read.php");
     }
-}
-?>
+    ?>
 
-<?php
-include 'read.php';
-?>
+    <?php
+        include 'read.php';
+    ?>
 </body>
 </html>

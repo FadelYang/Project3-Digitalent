@@ -20,6 +20,32 @@
         // pre_r($result);
         // pre_r($result->fetch_assoc());
     ?>
+
+    <div class="notification">
+        <?php if (isset($_SESSION['message'])): ?>
+            <div class="alert alert-<?=$_SESSION["msg_type"]?>"></div>
+
+            <?php  
+                echo $_SESSION["message"];
+                unset($_SESSION["message"]);
+            ?>
+        <?php endif ?>
+    </div>
+
+    <div class="container">
+    <nav class="row align-items-center">
+        <div class="col">
+            <h1>Manajemen Barang</h1>
+        </div>
+        <div class="col-2 justify-content-end">
+            <a href="./index.php"><h4>Tambah Barang</h4></a>
+        </div>
+        <div class="col-2 justify-content-end">
+            <a href="./read.php"><h4>Daftar Barang</h4></a>
+        </div>
+    </nav>
+
+    </div>
     <div class="container">
         <div class="row justify-content-center">
             <table class="table">
